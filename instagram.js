@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const embeds = [
+        'https://www.instagram.com/p/C-HsifZRrWM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/CtRuRShg69v/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/Cyb9SJAs1hD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/C-9bJuNOsKa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         'https://www.instagram.com/p/C9YgXOoBx0z/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         'https://www.instagram.com/p/C7RetwkAyiB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         'https://www.instagram.com/p/C_E6fClpQZo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
