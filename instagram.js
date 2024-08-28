@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const embeds = [
-        'https://www.instagram.com/p/C-HsifZRrWM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/C-i8tMERVxU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/C2jBX8FOQyq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/Cd1iCDqOpb7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/C-Ql5dDp5aW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/C-oJ0kvuJDH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        'https://www.instagram.com/p/C8aWP7pPq5Y/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         'https://www.instagram.com/p/CtRuRShg69v/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         'https://www.instagram.com/p/Cyb9SJAs1hD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         'https://www.instagram.com/p/C-9bJuNOsKa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
