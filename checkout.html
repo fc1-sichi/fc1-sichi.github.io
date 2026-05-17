@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sichi Shop request checkout for drink orders and car fitment details.">
+    <title>Sichi Shop | Request Checkout</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+</head>
+<body class="checkout-body">
+    <header class="site-header is-scrolled">
+        <a class="brand" href="/#shop" aria-label="Back to Sichi shop">
+            <span class="brand-mark">Si</span>
+            <span>
+                <strong>Sichi Shop</strong>
+                <small>request checkout</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Checkout navigation">
+            <a href="/#shop">Shop</a>
+            <a href="/checkout.html">Checkout</a>
+        </nav>
+        <a class="icon-button cart-link" href="/checkout.html" aria-label="Open request cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+    </header>
+
+    <main class="checkout-page">
+        <section class="checkout-hero">
+            <p class="eyebrow">Request checkout</p>
+            <h1>Confirm your order details.</h1>
+            <p>Add your contact, car fitment, and shipping info. The summary below is copied for PayPal so the request stays clear.</p>
+        </section>
+
+        <section class="checkout-layout" aria-labelledby="checkout-title">
+            <form class="checkout-form" data-checkout-form>
+                <div class="checkout-panel">
+                    <p class="eyebrow">Contact</p>
+                    <h2 id="checkout-title">Your info</h2>
+                    <div class="field-grid">
+                        <label>
+                            Name
+                            <input type="text" name="name" placeholder="Your name" required>
+                        </label>
+                        <label>
+                            Instagram or email
+                            <input type="text" name="contact" placeholder="@username or email" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checkout-panel">
+                    <p class="eyebrow">Car details</p>
+                    <h2>Fitment info</h2>
+                    <div class="field-grid four">
+                        <label>
+                            Year
+                            <input type="text" name="year" placeholder="2020">
+                        </label>
+                        <label>
+                            Make
+                            <input type="text" name="make" placeholder="Honda">
+                        </label>
+                        <label>
+                            Model
+                            <input type="text" name="model" placeholder="Civic">
+                        </label>
+                        <label>
+                            Trim
+                            <input type="text" name="trim" placeholder="Si / Sport / Type R">
+                        </label>
+                    </div>
+                    <div class="field-grid">
+                        <label>
+                            Transmission
+                            <select name="transmission">
+                                <option value="">Select one</option>
+                                <option>Manual</option>
+                                <option>Automatic</option>
+                                <option>CVT</option>
+                                <option>Other / not sure</option>
+                            </select>
+                        </label>
+                        <label>
+                            Shifter setup
+                            <input type="text" name="shifter" placeholder="OEM shifter, short shifter, swap, etc.">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checkout-panel">
+                    <p class="eyebrow">Thread sizing</p>
+                    <h2>Adapter notes</h2>
+                    <div class="thread-choice">
+                        <label class="check-row">
+                            <input type="checkbox" name="knowsThread" data-thread-toggle>
+                            I know my thread size
+                        </label>
+                    </div>
+                    <div class="field-grid">
+                        <label>
+                            Thread size
+                            <input type="text" name="threadSize" data-thread-size placeholder="M10x1.5, M12x1.25, etc.">
+                        </label>
+                        <label>
+                            Adapter needed?
+                            <select name="adapter">
+                                <option value="">Not sure yet</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>I need help confirming</option>
+                            </select>
+                        </label>
+                    </div>
+                    <label>
+                        Extra notes
+                        <textarea name="notes" rows="5" placeholder="Flavor substitutions, quantity notes, pickup/shipping, car mods, photos you can send, deadline, etc."></textarea>
+                    </label>
+                </div>
+
+                <div class="checkout-panel">
+                    <p class="eyebrow">Shipping estimate</p>
+                    <h2>Shipping address</h2>
+                    <div class="field-grid">
+                        <label>
+                            Street address
+                            <input type="text" name="address1" autocomplete="shipping address-line1" placeholder="123 Main St">
+                        </label>
+                        <label>
+                            Apt, unit, suite
+                            <input type="text" name="address2" autocomplete="shipping address-line2" placeholder="Apt 4B, Unit 2, etc.">
+                        </label>
+                    </div>
+                    <div class="field-grid four">
+                        <label>
+                            City
+                            <input type="text" name="city" autocomplete="shipping address-level2" placeholder="Olympia">
+                        </label>
+                        <label>
+                            ZIP code
+                            <input type="text" name="zip" inputmode="numeric" autocomplete="shipping postal-code" placeholder="98503">
+                        </label>
+                        <label>
+                            State
+                            <input type="text" name="state" autocomplete="shipping address-level1" placeholder="WA / Washington">
+                        </label>
+                        <label>
+                            Shipping speed
+                            <select name="shippingSpeed" data-shipping-speed>
+                                <option value="cheapest">Cheapest available</option>
+                                <option value="ups">UPS Ground estimate</option>
+                                <option value="standard">Standard estimate</option>
+                                <option value="expedited">Expedited estimate</option>
+                                <option value="pickup">Local pickup / meetup</option>
+                            </select>
+                        </label>
+                        <label>
+                            Packaging
+                            <select name="packageType">
+                                <option value="small">Small box / padded mailer</option>
+                                <option value="medium">Medium box</option>
+                                <option value="fragile">Fragile / extra padding</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="shipping-result">
+                        <div>
+                            <span>Estimated shipping</span>
+                            <strong data-shipping-total>$0</strong>
+                        </div>
+                        <p data-shipping-label>Choose a shipping option for an estimate.</p>
+                        <small data-address-preview>Full address will appear in the copyable checkout note.</small>
+                    </div>
+                </div>
+
+                <div class="checkout-panel">
+                    <p class="eyebrow">Copy this</p>
+                    <h2>Order summary</h2>
+                    <textarea class="summary-box" data-summary-box rows="14" readonly></textarea>
+                    <div class="checkout-actions">
+                        <button class="button secondary" type="button" data-copy-summary>
+                            <i class="fa-solid fa-copy"></i>
+                        Copy order note
+                        </button>
+                        <span class="copy-status" data-copy-status aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="checkout-actions">
+                    <a class="button secondary" href="/#shop">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Keep shopping
+                    </a>
+                    <a class="button primary" data-submit-request href="https://paypal.me/moonlightnetworkUS?country.x=US&locale.x=en_US">
+                        <i class="fa-brands fa-paypal"></i>
+                        Copy note and open PayPal
+                    </a>
+                </div>
+            </form>
+
+            <aside class="checkout-cart checkout-panel" aria-live="polite">
+                <div class="summary-top">
+                    <div>
+                        <p class="eyebrow">Cart</p>
+                        <h2>Your request</h2>
+                    </div>
+                    <button class="text-button" type="button" data-clear-cart>Clear</button>
+                </div>
+                <div class="checkout-items" data-checkout-items></div>
+                <p class="empty-state" data-cart-empty>Your cart is empty.</p>
+                <div class="checkout-total">
+                    <span>Estimated total</span>
+                    <strong data-cart-total>$0</strong>
+                </div>
+                <div class="checkout-total shipping-line">
+                    <span>With shipping</span>
+                    <strong data-grand-total>$0</strong>
+                </div>
+                <p class="summary-note">Final availability, adapter needs, pickup, and payment are confirmed manually for now.</p>
+            </aside>
+        </section>
+    </main>
+
+    <script src="checkout.js?v=7"></script>
+</body>
+</html>

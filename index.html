@@ -3,32 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sichi The Slow FC1</title>
+    <meta name="description" content="Sichi shop for custom shift knobs, 3D printed parts, handmade cabin goods, and made-to-order car accessories.">
+    <title>Sichi Shop | Custom Car Goods</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="/favicon.png" type="image/png">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
 <body>
-    <!-- HEADER -->
-    <div id="header-placeholder"></div>
+    <header class="site-header" data-header>
+        <a class="brand" href="#top" aria-label="Sichi shop home">
+            <span class="brand-mark">Si</span>
+            <span>
+                <strong>Sichi Shop</strong>
+                <small>printed + handmade parts</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#shop">Shop</a>
+            <a href="#custom">Custom</a>
+            <a href="#order">Order</a>
+        </nav>
+        <a class="icon-button cart-link" href="/checkout.html" aria-label="Open request cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+    </header>
 
-    <!-- INTRO -->
-    <div id="intro-placeholder"></div>
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <picture class="hero-media">
+                <img src="/images/hero-forest-civic.jpeg" alt="White Honda Civic Si parked in a forest">
+            </picture>
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+                <p class="eyebrow">Small-batch car goods by Sichi</p>
+                <h1 id="hero-title">Custom shift knobs and cabin pieces made with attitude.</h1>
+                <p class="hero-copy">3D printed, hand-finished, and made-to-order parts for drivers who want their interior to feel personal before the next pull.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#shop">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Shop concepts
+                    </a>
+                    <a class="button secondary" href="#order">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        Start an order
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<!-- INSTAGRAM EMBEDS -->
-<div id="insta-placeholder" class="instagram-embeds-container"></div>
+        <section class="section intro-band" aria-label="Shop highlights">
+            <div class="stat">
+                <strong>Made to order</strong>
+                <span>colors, thread adapters, logos, and textures can be dialed in per build</span>
+            </div>
+            <div class="stat">
+                <strong>Driver focused</strong>
+                <span>shift feel, grip, weight, and daily comfort come before decoration</span>
+            </div>
+            <div class="stat">
+                <strong>Local maker energy</strong>
+                <span>3D printed parts, resin details, handmade accessories, and limited drops</span>
+            </div>
+        </section>
 
-<!-- PAGINATION CONTROLS -->
-<div id="pagination-controls"></div>
+        <section class="section shop-section" id="shop" aria-labelledby="shop-title">
+            <div class="section-heading">
+                <p class="eyebrow">Shop categories</p>
+                <h2 id="shop-title">Shop the lineup</h2>
+                <p>Browse energy cans, custom shift knobs, keychains, and 3D printed pieces. The energy category has brand filters; other product categories can grow as you add drops.</p>
+            </div>
 
+            <div class="category-tabs" role="group" aria-label="Product categories">
+                <button class="category-button active" type="button" data-category="energy">Energy cans</button>
+                <button class="category-button" type="button" data-category="shiftknobs">Shift knobs</button>
+                <button class="category-button" type="button" data-category="keychains">Keychains</button>
+                <button class="category-button" type="button" data-category="models">3D models</button>
+            </div>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
+            <div class="filters" role="group" aria-label="Filter products">
+                <button class="filter-button" type="button" data-filter="all">All</button>
+                <button class="filter-button active" type="button" data-filter="redbull">Red Bull</button>
+                <button class="filter-button" type="button" data-filter="monster">Monster</button>
+                <button class="filter-button" type="button" data-filter="alani">Alani</button>
+                <button class="filter-button" type="button" data-filter="ghost">Ghost</button>
+            </div>
 
-<script src="instagram.js"></script>
-<script src="script.js"></script>
+            <div class="product-grid" data-products></div>
+        </section>
+
+        <section class="section custom-section" id="custom" aria-labelledby="custom-title">
+            <div class="custom-copy">
+                <p class="eyebrow">Flavor runs and local drops</p>
+                <h2 id="custom-title">Pick your drinks, send the list, and I will confirm what is in stock.</h2>
+                <p>Use the request list to build a mix of flavors. For now, orders can come through DM or email; later this same flow can connect to an API that sends notifications automatically.</p>
+            </div>
+            <div class="process">
+                <article>
+                    <span>01</span>
+                    <h3>Choose flavors</h3>
+                    <p>Filter by brand, add the cans you want, and carry the cart into checkout for car fitment and shipping details.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Confirm stock</h3>
+                    <p>I will check what is available, confirm substitutions if needed, and lock in the final total.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Pickup or delivery</h3>
+                    <p>Add your pickup, meetup, or shipping notes so the order can be handled cleanly.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section detail-band" aria-label="Available finishes">
+            <div>
+                <p class="eyebrow">Flavor wall</p>
+                <h2>Energy drinks organized by brand, flavor, and whatever is actually available.</h2>
+            </div>
+            <div class="swatch-row" aria-label="Example finish colors">
+                <span class="swatch pearl" title="Pearl white"></span>
+                <span class="swatch black" title="Gloss black"></span>
+                <span class="swatch red" title="Track red"></span>
+                <span class="swatch teal" title="Aqua teal"></span>
+                <span class="swatch metal" title="Brushed metal"></span>
+            </div>
+        </section>
+
+        <section class="section order-section" id="order" aria-labelledby="order-title">
+            <div class="section-heading">
+                <p class="eyebrow">Ready when you are</p>
+                <h2 id="order-title">Build a request list</h2>
+                <p>Save the flavors or parts you want, add a few notes, then checkout will bundle everything into one clean PayPal message.</p>
+            </div>
+
+            <div class="order-layout">
+                <form class="order-form" data-order-form>
+                    <div class="order-form-intro">
+                        <span><i class="fa-solid fa-clipboard-list"></i></span>
+                        <div>
+                            <h3>Tell me what you are building.</h3>
+                            <p>This part is just a quick note pad. The full car, shipping, and PayPal copy box live on checkout.</p>
+                        </div>
+                    </div>
+                    <label>
+                        Name
+                        <input type="text" name="name" placeholder="Your name">
+                    </label>
+                    <label>
+                        Contact
+                        <input type="text" name="contact" placeholder="@instagram or email">
+                    </label>
+                    <label>
+                        Build notes
+                        <textarea name="notes" rows="5" placeholder="Flavors, quantity, pickup/shipping notes, budget, or anything you want me to source..."></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <a class="button primary" data-email-link href="/checkout.html">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            Checkout request
+                        </a>
+                        <a class="button secondary" href="https://www.instagram.com/jj_sichi/">
+                            <i class="fa-brands fa-instagram"></i>
+                            DM Sichi
+                        </a>
+                    </div>
+                </form>
+
+                <aside class="order-summary" aria-live="polite">
+                    <div class="summary-top">
+                        <div>
+                            <p class="eyebrow">Saved cart</p>
+                            <h3>Ready for checkout</h3>
+                        </div>
+                        <button class="text-button" type="button" data-clear-order>Clear</button>
+                    </div>
+                    <ul data-order-list></ul>
+                    <p class="empty-state" data-empty-state>Your saved cart will show up here after you add something from the shop.</p>
+                    <div class="cache-total" data-cache-total hidden>
+                        <span data-cache-count>0 items</span>
+                        <strong data-cache-subtotal>$0</strong>
+                    </div>
+                    <a class="button secondary cache-checkout" href="/checkout.html" data-cache-checkout hidden>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Open checkout
+                    </a>
+                    <p class="summary-note">Checkout adds the address, shipping estimate, and copyable PayPal note.</p>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>Sichi Shop</strong>
+            <p>Custom car goods, printed parts, handmade details.</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@fc1_sichi?_t=8ong2jf42JW&_r=1" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/jj_sichi/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@jj_sichi" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
