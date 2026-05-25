@@ -1,14 +1,4 @@
 const savedImages = {
-    "Red Bull Original": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/ad3b2bd89c/us_ed_250ml_energy-drink_country_rgb__cold_closed_front_com_25.png/m/168x0",
-    "Red Bull Summer Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/f49ccb7907/us_sl_250ml_ac_the-summer-edition_country_rgb_packrq-3659_cold_closed_front_com_full.png/m/168x0",
-    "Red Bull Iced Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/ff40331efd/us_igb_250ml_ac_the-iced-edition_country_rgb_packrq-3370_cold_closed_front_com_full.png/m/168x0",
-    "Red Bull Peach Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/a305efe037/us_wp_250ml_ac_the-peach-edition_country_rgb_packrq-3055_cold_closed_front_com_full.png/m/168x0",
-    "Red Bull Pink Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/b44f42cfb0/us_ff_250ml_the-pink-edition_country_rgb_packrq-2064_cold_closed_front_com_full.png/m/168x0",
-    "Red Bull Amber Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/51b3b7127e/us_as_250ml_the-amber-edition_country_rgb__cold_closed_front_com_full.png/m/168x0",
-    "Red Bull Sea Blue Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/31141b9a15/us_jb_250ml_the-sea-blue-edition_country_rgb_do242582_cold_closed_front_com_25.png/m/168x0",
-    "Red Bull Coconut Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/c076e29890/us_cc_250ml_ac_the-coconut-edition_country_rgb__cold_closed_front_com_full.png/m/168x0",
-    "Red Bull Yellow Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/50f9e68454/us_yl_250ml_the-yellow-edition_country_rgb__cold_closed_front_com_25.png/m/168x0",
-    "Red Bull Red Edition": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/7d77a8f904/us_wm_250ml_ac_the-red-edition_country_rgb__cold_closed_front_com_25.png/m/168x0",
     "Monster Ultra Zero Ultra": "/images/products/drink-02.png",
     "Monster Energy Original": "/images/products/drink-03.png",
     "Monster Ultra Blue Hawaiian": "/images/products/drink-08.png",
@@ -28,13 +18,6 @@ const savedImages = {
 };
 
 Object.assign(savedImages, {
-    "Red Bull Sugarfree": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/e54b40774e/us_sf_250ml_sugarfree_country_rgb__cold_closed_front_com_25.png/m/352x0",
-    "Red Bull Zero": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/deda1afb1a/us_zr_250ml_zero_country_rgb_packrq-1775_cold_closed_front_com_25.png/m/352x0",
-    "Red Bull Summer Edition Sugarfree": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/79afbb6187/us_sf-sl_250ml_ac_the-summer-edition-sugarfree_country_rgb_packrq-3763_cold_closed_front_com_25.png/m/352x0",
-    "Red Bull Iced Edition Sugarfree": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/8c39bc6dc2/us_sf-igb_250ml_ac_the-iced-edition-sugarfree_country_rgb_packrq-3371_cold_closed_front_com_full.png/m/352x0",
-    "Red Bull Peach Edition Sugarfree": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/b80a915d72/us_sf-wp_250ml_ac_the-peach-edition-sugarfree_country_rgb_packrq-3056_cold_closed_front_com_full.png/m/352x0",
-    "Red Bull Pink Edition Sugarfree": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/870x2200/54293be9a2/us_sf-ff_250ml_the-pink-edition-sugarfree_country_rgb__cold_closed_front_com_25.png/m/352x0",
-    "Red Bull Sea Blue Edition Sugarfree": "https://www.redbull.com/energydrink/v1/resources/storyblok/images/f/287059/528x1348/d52df1907a/us_sf-jb_250ml_the-sea-blue-edition-sugarfree_country_rgb_packrq-2269_cold_closed_front_com_full.png/m/352x0",
     "Monster Energy Original": "https://web-assests.monsterenergy.com/mnst/7b0389eb-d398-45f6-9b93-d92570979a7e.png",
     "Monster Energy Zero Sugar": "https://web-assests.monsterenergy.com/mnst/9f180ff9-4af0-4f17-b0f0-574906dc6189.png",
     "Monster Energy Strawberry Shot": "https://web-assests.monsterenergy.com/mnst/3f8ba93e-6ec9-4ad5-80a3-49a267008905.png",
@@ -128,7 +111,7 @@ Object.assign(savedImages, {
 });
 
 const brandAccents = {
-    redbull: "#2446a6",
+    classic: "#2446a6",
     monster: "#78bf20",
     alani: "#ef3f7f",
     ghost: "#cdfa1c"
@@ -147,7 +130,7 @@ function product({ name, category, label, flavor, accent, collection }) {
         description: `${flavor}${collection ? ` ${collection}.` : "."}`,
         accent: accent || brandAccents[category],
         image,
-        imageAlt: `${name} energy drink can`
+        imageAlt: `${name} can-inspired shift knob`
     };
 }
 
@@ -173,31 +156,31 @@ function slugify(value) {
         .replace(/^-|-$/g, "");
 }
 
-const redBullProducts = [
-    ["Red Bull Original", "Original Red Bull flavor", "#2446a6"],
-    ["Red Bull Sugarfree", "Original Red Bull taste without sugar", "#b8c5d9"],
-    ["Red Bull Zero", "Zero sugar Red Bull with a refreshed taste", "#111111"],
-    ["Red Bull Summer Edition", "Sudachi lime", "#f4d434"],
-    ["Red Bull Summer Edition Sugarfree", "Sugarfree sudachi lime", "#f4d434"],
-    ["Red Bull Iced Edition", "Iced vanilla berry", "#75d8e4"],
-    ["Red Bull Iced Edition Sugarfree", "Sugarfree iced vanilla berry", "#75d8e4"],
-    ["Red Bull Peach Edition", "White peach", "#e94287"],
-    ["Red Bull Peach Edition Sugarfree", "Sugarfree white peach", "#e94287"],
-    ["Red Bull Pink Edition", "Wild berries", "#f063a7"],
-    ["Red Bull Pink Edition Sugarfree", "Sugarfree wild berries", "#f063a7"],
-    ["Red Bull Amber Edition", "Strawberry apricot", "#f58b25"],
-    ["Red Bull Sea Blue Edition", "Juneberry", "#1775d2"],
-    ["Red Bull Sea Blue Edition Sugarfree", "Sugarfree juneberry", "#1775d2"],
-    ["Red Bull Coconut Edition", "Coconut berry", "#f5f5f0"],
-    ["Red Bull Yellow Edition", "Tropical fruits", "#f9d21e"],
-    ["Red Bull Red Edition", "Watermelon", "#e6392f"]
+const classicProducts = [
+    ["Blue Silver Original Can Knob", "Blue and silver original-style custom can knob", "#2446a6"],
+    ["Sugar Free Blue Silver Can Knob", "Blue and silver sugar-free style custom can knob", "#b8c5d9"],
+    ["Zero Sugar Dark Can Knob", "Dark zero-sugar style custom can knob", "#111111"],
+    ["Summer Lime Can Knob", "Bright lime summer-style custom can knob", "#f4d434"],
+    ["Sugar Free Summer Lime Can Knob", "Sugar-free lime summer-style custom can knob", "#f4d434"],
+    ["Iced Vanilla Berry Can Knob", "Iced vanilla berry colorway custom can knob", "#75d8e4"],
+    ["Sugar Free Iced Vanilla Berry Can Knob", "Sugar-free iced vanilla berry colorway custom can knob", "#75d8e4"],
+    ["White Peach Can Knob", "White peach colorway custom can knob", "#e94287"],
+    ["Sugar Free White Peach Can Knob", "Sugar-free white peach colorway custom can knob", "#e94287"],
+    ["Wild Berry Pink Can Knob", "Wild berry pink colorway custom can knob", "#f063a7"],
+    ["Sugar Free Wild Berry Pink Can Knob", "Sugar-free wild berry pink colorway custom can knob", "#f063a7"],
+    ["Strawberry Apricot Can Knob", "Strawberry apricot colorway custom can knob", "#f58b25"],
+    ["Juneberry Blue Can Knob", "Juneberry blue colorway custom can knob", "#1775d2"],
+    ["Sugar Free Juneberry Blue Can Knob", "Sugar-free Juneberry blue colorway custom can knob", "#1775d2"],
+    ["Coconut Berry Can Knob", "Coconut berry colorway custom can knob", "#f5f5f0"],
+    ["Tropical Yellow Can Knob", "Tropical yellow colorway custom can knob", "#f9d21e"],
+    ["Watermelon Red Can Knob", "Watermelon red colorway custom can knob", "#e6392f"]
 ].map(([name, flavor, accent]) => product({
     name,
-    category: "redbull",
-    label: "Red Bull",
+    category: "classic",
+    label: "Classic can",
     flavor,
     accent,
-    collection: "Official Red Bull current US lineup"
+    collection: "Custom can-inspired shift knob style"
 }));
 
 const monsterProducts = [
@@ -284,7 +267,7 @@ const alaniProducts = [
     label: "Alani",
     flavor,
     accent,
-    collection: "Alani energy drink variants"
+    collection: "Bright can colorway variants"
 }));
 
 const ghostProducts = [
@@ -322,7 +305,7 @@ const ghostProducts = [
 }));
 
 const products = [
-    ...redBullProducts,
+    ...classicProducts,
     ...monsterProducts,
     ...alaniProducts,
     ...ghostProducts
@@ -410,7 +393,7 @@ const cacheSubtotal = document.querySelector("[data-cache-subtotal]");
 const cacheCheckout = document.querySelector("[data-cache-checkout]");
 
 let activeCategory = "energy";
-let activeFilter = "redbull";
+let activeFilter = "classic";
 
 function renderVisual(product) {
     const generatedClass = product.image.includes("/generated/") ? " generated-image" : "";
