@@ -568,6 +568,10 @@ h3 {
     margin-bottom: 22px;
 }
 
+.filters[hidden] {
+    display: none !important;
+}
+
 .filter-button,
 .category-button,
 .text-button {

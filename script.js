@@ -423,7 +423,12 @@ function renderProducts(filter = "all") {
         ? (filter === "all" ? products : products.filter((product) => product.category === filter))
         : merchProducts.filter((product) => product.category === activeCategory);
 
-    productGrid.innerHTML = visibleProducts.map((product) => `
+    productGrid.innerHTML = visibleProducts.map((product) => {
+        const canFinePrint = activeCategory === "energy"
+            ? `<p class="product-fine-print">Fine print: I use the selected flavor can when available; final can availability is confirmed before payment.</p>`
+            : "";
+
+        return `
         <article class="product-card">
             <div class="product-visual" style="--accent: ${product.accent};">
                 ${renderVisual(product)}
@@ -436,7 +441,7 @@ function renderProducts(filter = "all") {
                 <div>
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
-                    <p class="product-fine-print">Fine print: I use the selected flavor can when available; final can availability is confirmed before payment.</p>
+                    ${canFinePrint}
                 </div>
                 <button class="button secondary add-button" type="button" data-product-name="${product.name}">
                     <i class="fa-solid fa-plus"></i>
@@ -444,7 +449,8 @@ function renderProducts(filter = "all") {
                 </button>
             </div>
         </article>
-    `).join("");
+    `;
+    }).join("");
 }
 
 function getCart() {
@@ -598,4 +604,3 @@ window.addEventListener("scroll", () => {
 renderProducts(activeFilter);
 renderOrder();
 updateCartCount();
-
