@@ -1,4 +1,21 @@
 const savedImages = {
+    "Blue Silver Original Can Knob": "/images/products/renders/classic-blue-silver.jpg",
+    "Sugar Free Blue Silver Can Knob": "/images/products/renders/classic-blue-silver.jpg",
+    "Zero Sugar Dark Can Knob": "/images/products/renders/classic-black-graphite.jpg",
+    "Summer Lime Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Sugar Free Summer Lime Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Iced Vanilla Berry Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Sugar Free Iced Vanilla Berry Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "White Peach Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Sugar Free White Peach Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Wild Berry Pink Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Sugar Free Wild Berry Pink Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Strawberry Apricot Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Juneberry Blue Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Sugar Free Juneberry Blue Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Coconut Berry Can Knob": "/images/products/renders/classic-blue-silver.jpg",
+    "Tropical Yellow Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Watermelon Red Can Knob": "/images/products/renders/classic-watermelon-red.jpg",
     "Monster Ultra Zero Ultra": "/images/products/drink-02.png",
     "Monster Energy Original": "/images/products/drink-03.png",
     "Monster Ultra Blue Hawaiian": "/images/products/drink-08.png",
@@ -397,7 +414,8 @@ let activeFilter = "classic";
 
 function renderVisual(product) {
     const generatedClass = product.image.includes("/generated/") ? " generated-image" : "";
-    return `<img class="product-image${generatedClass}" src="${product.image}" alt="${product.imageAlt}">`;
+    const renderedClass = product.image.includes("/renders/") ? " rendered-image" : "";
+    return `<img class="product-image${generatedClass}${renderedClass}" src="${product.image}" alt="${product.imageAlt}">`;
 }
 
 function renderProducts(filter = "all") {
@@ -418,6 +436,7 @@ function renderProducts(filter = "all") {
                 <div>
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
+                    <p class="product-fine-print">Fine print: I use the selected flavor can when available; final can availability is confirmed before payment.</p>
                 </div>
                 <button class="button secondary add-button" type="button" data-product-name="${product.name}">
                     <i class="fa-solid fa-plus"></i>
