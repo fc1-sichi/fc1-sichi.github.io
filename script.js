@@ -1,21 +1,21 @@
 const savedImages = {
-    "Blue Silver Original Can Knob": "/images/products/renders/classic-blue-silver.jpg",
-    "Sugar Free Blue Silver Can Knob": "/images/products/renders/classic-blue-silver.jpg",
-    "Zero Sugar Dark Can Knob": "/images/products/renders/classic-black-graphite.jpg",
-    "Summer Lime Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Sugar Free Summer Lime Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Iced Vanilla Berry Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Sugar Free Iced Vanilla Berry Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "White Peach Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Sugar Free White Peach Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Wild Berry Pink Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Sugar Free Wild Berry Pink Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Strawberry Apricot Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Juneberry Blue Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Sugar Free Juneberry Blue Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Coconut Berry Can Knob": "/images/products/renders/classic-blue-silver.jpg",
-    "Tropical Yellow Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Watermelon Red Can Knob": "/images/products/renders/classic-watermelon-red.jpg",
+    "Red Bull Original Can Knob": "/images/products/renders/classic-blue-silver.jpg",
+    "Red Bull Sugarfree Can Knob": "/images/products/renders/classic-blue-silver.jpg",
+    "Red Bull Zero Can Knob": "/images/products/renders/classic-black-graphite.jpg",
+    "Red Bull Summer Edition Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Red Bull Summer Edition Sugarfree Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Red Bull Iced Edition Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Red Bull Iced Edition Sugarfree Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Red Bull Peach Edition Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Red Bull Peach Edition Sugarfree Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Red Bull Pink Edition Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Red Bull Pink Edition Sugarfree Can Knob": "/images/products/renders/classic-white-peach.jpg",
+    "Red Bull Amber Edition Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Red Bull Sea Blue Edition Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Red Bull Sea Blue Edition Sugarfree Can Knob": "/images/products/renders/classic-iced-berry.jpg",
+    "Red Bull Coconut Edition Can Knob": "/images/products/renders/classic-blue-silver.jpg",
+    "Red Bull Yellow Edition Can Knob": "/images/products/renders/classic-lime-silver.jpg",
+    "Red Bull Red Edition Can Knob": "/images/products/renders/classic-watermelon-red.jpg",
     "Monster Ultra Zero Ultra": "/images/products/drink-02.png",
     "Monster Energy Original": "/images/products/drink-03.png",
     "Monster Ultra Blue Hawaiian": "/images/products/drink-08.png",
@@ -120,7 +120,7 @@ Object.assign(savedImages, {
     "GHOST Electric Limeade": "https://drinkghost.com/cdn/shop/files/ElecLimeFront.webp?crop=center&height=1272&v=1748884055&width=513",
     "GHOST Tropical Mango": "https://drinkghost.com/cdn/shop/files/TropicalMangoFront.webp?crop=center&height=1272&v=1744834229&width=513",
     "GHOST Warheads Sour Green Apple": "https://drinkghost.com/cdn/shop/files/WarheadsSGAFront.webp?crop=center&height=1272&v=1744834489&width=513",
-    "GHOST Cherry Limeade": "https://drinkghost.com/cdn/shop/files/CherryLimeadeFront.webp?crop=center&height=1272&v=1744832266&width=513",
+    "GHOST Cherry Limeade Can Knob": "/images/products/renders/ghost-cherry-limeade-shiftknob.jpeg",
     "GHOST Citrus": "https://drinkghost.com/cdn/shop/files/CitrusFront.webp?crop=center&height=1272&v=1744832442&width=513",
     "GHOST Orange Cream": "https://drinkghost.com/cdn/shop/files/OrangeCreamFront.webp?crop=center&height=1272&v=1744832996&width=513",
     "GHOST Bubblicious Cotton Candy": "https://drinkghost.com/cdn/shop/files/BUBBLICIOUSCCFront.webp?crop=center&height=1272&v=1744831929&width=513",
@@ -174,30 +174,30 @@ function slugify(value) {
 }
 
 const classicProducts = [
-    ["Blue Silver Original Can Knob", "Blue and silver original-style custom can knob", "#2446a6"],
-    ["Sugar Free Blue Silver Can Knob", "Blue and silver sugar-free style custom can knob", "#b8c5d9"],
-    ["Zero Sugar Dark Can Knob", "Dark zero-sugar style custom can knob", "#111111"],
-    ["Summer Lime Can Knob", "Bright lime summer-style custom can knob", "#f4d434"],
-    ["Sugar Free Summer Lime Can Knob", "Sugar-free lime summer-style custom can knob", "#f4d434"],
-    ["Iced Vanilla Berry Can Knob", "Iced vanilla berry colorway custom can knob", "#75d8e4"],
-    ["Sugar Free Iced Vanilla Berry Can Knob", "Sugar-free iced vanilla berry colorway custom can knob", "#75d8e4"],
-    ["White Peach Can Knob", "White peach colorway custom can knob", "#e94287"],
-    ["Sugar Free White Peach Can Knob", "Sugar-free white peach colorway custom can knob", "#e94287"],
-    ["Wild Berry Pink Can Knob", "Wild berry pink colorway custom can knob", "#f063a7"],
-    ["Sugar Free Wild Berry Pink Can Knob", "Sugar-free wild berry pink colorway custom can knob", "#f063a7"],
-    ["Strawberry Apricot Can Knob", "Strawberry apricot colorway custom can knob", "#f58b25"],
-    ["Juneberry Blue Can Knob", "Juneberry blue colorway custom can knob", "#1775d2"],
-    ["Sugar Free Juneberry Blue Can Knob", "Sugar-free Juneberry blue colorway custom can knob", "#1775d2"],
-    ["Coconut Berry Can Knob", "Coconut berry colorway custom can knob", "#f5f5f0"],
-    ["Tropical Yellow Can Knob", "Tropical yellow colorway custom can knob", "#f9d21e"],
-    ["Watermelon Red Can Knob", "Watermelon red colorway custom can knob", "#e6392f"]
+    ["Red Bull Original Can Knob", "Original Red Bull can shift knob style", "#2446a6"],
+    ["Red Bull Sugarfree Can Knob", "Sugarfree Red Bull can shift knob style", "#b8c5d9"],
+    ["Red Bull Zero Can Knob", "Zero sugar Red Bull can shift knob style", "#111111"],
+    ["Red Bull Summer Edition Can Knob", "Summer Edition Red Bull can shift knob style", "#f4d434"],
+    ["Red Bull Summer Edition Sugarfree Can Knob", "Sugarfree Summer Edition Red Bull can shift knob style", "#f4d434"],
+    ["Red Bull Iced Edition Can Knob", "Iced Edition Red Bull can shift knob style", "#75d8e4"],
+    ["Red Bull Iced Edition Sugarfree Can Knob", "Sugarfree Iced Edition Red Bull can shift knob style", "#75d8e4"],
+    ["Red Bull Peach Edition Can Knob", "Peach Edition Red Bull can shift knob style", "#e94287"],
+    ["Red Bull Peach Edition Sugarfree Can Knob", "Sugarfree Peach Edition Red Bull can shift knob style", "#e94287"],
+    ["Red Bull Pink Edition Can Knob", "Pink Edition Red Bull can shift knob style", "#f063a7"],
+    ["Red Bull Pink Edition Sugarfree Can Knob", "Sugarfree Pink Edition Red Bull can shift knob style", "#f063a7"],
+    ["Red Bull Amber Edition Can Knob", "Amber Edition Red Bull can shift knob style", "#f58b25"],
+    ["Red Bull Sea Blue Edition Can Knob", "Sea Blue Edition Red Bull can shift knob style", "#1775d2"],
+    ["Red Bull Sea Blue Edition Sugarfree Can Knob", "Sugarfree Sea Blue Edition Red Bull can shift knob style", "#1775d2"],
+    ["Red Bull Coconut Edition Can Knob", "Coconut Edition Red Bull can shift knob style", "#f5f5f0"],
+    ["Red Bull Yellow Edition Can Knob", "Yellow Edition Red Bull can shift knob style", "#f9d21e"],
+    ["Red Bull Red Edition Can Knob", "Red Edition Red Bull can shift knob style", "#e6392f"]
 ].map(([name, flavor, accent]) => product({
     name,
     category: "classic",
-    label: "Classic can",
+    label: "Red Bull",
     flavor,
     accent,
-    collection: "Custom can-inspired shift knob style"
+    collection: "Made using the selected can when available"
 }));
 
 const monsterProducts = [
@@ -288,6 +288,7 @@ const alaniProducts = [
 }));
 
 const ghostProducts = [
+    ["GHOST Cherry Limeade Can Knob", "Cherry limeade can shown as an installed shift knob", "#e9283d"],
     ["GHOST OG", "Original GHOST flavor", "#f7f7f7"],
     ["GHOST Sour Strips Rainbow", "Sour Strips rainbow candy", "#ff5aa7"],
     ["GHOST Warheads Sour Watermelon", "Warheads sour watermelon", "#f53088"],
@@ -307,7 +308,6 @@ const ghostProducts = [
     ["GHOST Electric Limeade", "Electric limeade", "#a9f327"],
     ["GHOST Tropical Mango", "Tropical mango", "#ff9c1c"],
     ["GHOST Warheads Sour Green Apple", "Warheads sour green apple", "#5ee22a"],
-    ["GHOST Cherry Limeade", "Cherry limeade", "#e9283d"],
     ["GHOST Citrus", "Lemon-lime citrus", "#cdfa1c"],
     ["GHOST Orange Cream", "Orange cream", "#ff7925"],
     ["GHOST Bubblicious Cotton Candy", "Cotton candy bubble gum", "#69d5ff"],
@@ -318,7 +318,7 @@ const ghostProducts = [
     label: "GHOST",
     flavor,
     accent,
-    collection: "GHOST Energy flavor lineup"
+    collection: "GHOST can shift knob style"
 }));
 
 const products = [
