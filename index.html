@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sichi shop and @jj_sichi garage feed for custom shift knobs, 3D printed parts, handmade cabin goods, and made-to-order car accessories.">
-    <title>Sichi Shop | @jj_sichi Garage Goods</title>
+    <meta name="description" content="Sichi shop for can-style shift knobs, custom printed parts, handmade cabin goods, and made-to-order car accessories.">
+    <title>Sichi Shop | Custom Shift Knobs and Cabin Goods</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
 <body>
     <header class="site-header" data-header>
-        <a class="brand" href="#top" aria-label="Sichi shop home">
+        <a class="brand" href="#shop" aria-label="Sichi shop home">
             <span class="brand-mark">Si</span>
             <span>
                 <strong>Sichi Shop</strong>
@@ -20,10 +20,10 @@
             </span>
         </a>
         <nav class="nav-links" aria-label="Main navigation">
-            <a href="#instagram">Instagram</a>
             <a href="#shop">Shop</a>
             <a href="#custom">Custom</a>
             <a href="#order">Order</a>
+            <a href="#instagram">Instagram</a>
         </nav>
         <a class="icon-button cart-link" href="/checkout.html" aria-label="Open request cart">
             <i class="fa-solid fa-bag-shopping"></i>
@@ -32,6 +32,59 @@
     </header>
 
     <main id="top">
+        <section class="section shop-section shop-home" id="shop" aria-labelledby="shop-title">
+            <div class="section-heading shop-heading">
+                <div>
+                    <p class="eyebrow">Sichi shop</p>
+                    <h1 id="shop-title">Custom shift knobs and cabin goods.</h1>
+                </div>
+                <div class="shop-heading-copy">
+                    <p>Can-style shift knobs, custom parts, keychains, and 3D printed pieces made in small batches for builds that need something personal.</p>
+                    <p class="shop-fine-print">Fine print: can knob requests are made using the selected flavor can when available. Stock and exact can choice are confirmed before payment.</p>
+                </div>
+            </div>
+
+            <div class="shop-controls" aria-label="Shop filters">
+                <div>
+                    <p class="control-label">Product type</p>
+                    <div class="category-tabs" role="group" aria-label="Product categories">
+                        <button class="category-button active" type="button" data-category="energy">Can knobs</button>
+                        <button class="category-button" type="button" data-category="shiftknobs">Shift knobs</button>
+                        <button class="category-button" type="button" data-category="keychains">Keychains</button>
+                        <button class="category-button" type="button" data-category="models">3D models</button>
+                    </div>
+                </div>
+
+                <div class="flavor-controls">
+                    <p class="control-label">Can flavor style</p>
+                    <div class="filters" role="group" aria-label="Filter products">
+                        <button class="filter-button" type="button" data-filter="all">All</button>
+                        <button class="filter-button active" type="button" data-filter="classic">Classic</button>
+                        <button class="filter-button" type="button" data-filter="monster">Monster</button>
+                        <button class="filter-button" type="button" data-filter="alani">Alani</button>
+                        <button class="filter-button" type="button" data-filter="ghost">Ghost</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-grid" data-products></div>
+        </section>
+
+        <section class="section intro-band" aria-label="Shop highlights">
+            <div class="stat">
+                <strong>Made to order</strong>
+                <span>colors, thread adapters, logos, and textures can be dialed in per build</span>
+            </div>
+            <div class="stat">
+                <strong>Driver focused</strong>
+                <span>shift feel, grip, weight, and daily comfort come before decoration</span>
+            </div>
+            <div class="stat">
+                <strong>Local maker energy</strong>
+                <span>3D printed parts, resin details, handmade accessories, and limited drops</span>
+            </div>
+        </section>
+
         <section class="hero instagram-hero" id="instagram" aria-labelledby="hero-title">
             <picture class="hero-media">
                 <img src="/images/hero-forest-civic.jpeg" alt="White Honda Civic Si parked in a forest">
@@ -145,47 +198,6 @@
                     </div>
                 </a>
             </div>
-        </section>
-
-        <section class="section intro-band" aria-label="Shop highlights">
-            <div class="stat">
-                <strong>Made to order</strong>
-                <span>colors, thread adapters, logos, and textures can be dialed in per build</span>
-            </div>
-            <div class="stat">
-                <strong>Driver focused</strong>
-                <span>shift feel, grip, weight, and daily comfort come before decoration</span>
-            </div>
-            <div class="stat">
-                <strong>Local maker energy</strong>
-                <span>3D printed parts, resin details, handmade accessories, and limited drops</span>
-            </div>
-        </section>
-
-        <section class="section shop-section" id="shop" aria-labelledby="shop-title">
-            <div class="section-heading">
-                <p class="eyebrow">Shop categories</p>
-                <h2 id="shop-title">Shop the lineup</h2>
-                <p>Browse can-inspired shift knobs, custom parts, keychains, and 3D printed pieces. These are handmade custom conversions, not official beverage-brand merchandise.</p>
-                <p class="shop-fine-print">Fine print: can knob requests are made using the selected flavor can when available. Stock and exact can choice are confirmed before payment.</p>
-            </div>
-
-            <div class="category-tabs" role="group" aria-label="Product categories">
-                <button class="category-button active" type="button" data-category="energy">Can knobs</button>
-                <button class="category-button" type="button" data-category="shiftknobs">Shift knobs</button>
-                <button class="category-button" type="button" data-category="keychains">Keychains</button>
-                <button class="category-button" type="button" data-category="models">3D models</button>
-            </div>
-
-            <div class="filters" role="group" aria-label="Filter products">
-                <button class="filter-button" type="button" data-filter="all">All</button>
-                <button class="filter-button active" type="button" data-filter="classic">Classic</button>
-                <button class="filter-button" type="button" data-filter="monster">Monster</button>
-                <button class="filter-button" type="button" data-filter="alani">Alani</button>
-                <button class="filter-button" type="button" data-filter="ghost">Ghost</button>
-            </div>
-
-            <div class="product-grid" data-products></div>
         </section>
 
         <section class="section custom-section" id="custom" aria-labelledby="custom-title">

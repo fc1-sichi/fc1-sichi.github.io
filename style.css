@@ -269,6 +269,61 @@ h3 {
     padding: clamp(58px, 8vw, 104px) clamp(16px, 5vw, 72px);
 }
 
+.shop-home {
+    min-height: 100vh;
+    scroll-margin-top: 84px;
+    padding-top: clamp(96px, 12vw, 150px);
+    background:
+        radial-gradient(circle at 82% 8%, rgba(240, 83, 69, 0.12), transparent 32%),
+        radial-gradient(circle at 18% 2%, rgba(94, 185, 173, 0.1), transparent 30%),
+        linear-gradient(180deg, #191917 0%, var(--bg) 78%);
+}
+
+.shop-heading {
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+.shop-heading h1 {
+    max-width: 920px;
+    margin-bottom: 0;
+    font-size: clamp(2.7rem, 7vw, 6.4rem);
+}
+
+.shop-heading-copy {
+    max-width: 640px;
+    justify-self: end;
+    padding-top: 10px;
+}
+
+.shop-controls {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.95fr) minmax(260px, 1fr);
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 22px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    background: rgba(244, 239, 230, 0.035);
+}
+
+.shop-controls > * {
+    min-width: 0;
+}
+
+.flavor-controls[hidden] {
+    display: none !important;
+}
+
+.control-label {
+    margin: 0 0 8px;
+    color: rgba(244, 239, 230, 0.52);
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
 .instagram-hero .hero-content {
     width: min(940px, calc(100% - 32px));
 }
@@ -564,8 +619,7 @@ h3 {
 .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 22px;
+    gap: 8px;
 }
 
 .filters[hidden] {
@@ -583,11 +637,12 @@ h3 {
 
 .filter-button,
 .category-button {
-    min-height: 42px;
-    padding: 10px 14px;
+    min-height: 40px;
+    padding: 9px 13px;
+    border-radius: 0;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
 }
 
 .filter-button.active,
@@ -599,13 +654,12 @@ h3 {
 .category-tabs {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 8px;
 }
 
 .category-button {
-    min-height: 48px;
-    padding-inline: 18px;
+    min-height: 42px;
+    padding-inline: 15px;
 }
 
 .product-grid {
@@ -629,11 +683,7 @@ h3 {
     height: 300px;
     min-height: 300px;
     overflow: hidden;
-    background:
-        radial-gradient(circle at 50% 48%, color-mix(in srgb, var(--accent) 36%, transparent), transparent 34%),
-        radial-gradient(circle at 18% 18%, rgba(94, 185, 173, 0.2), transparent 28%),
-        radial-gradient(circle at 84% 12%, rgba(240, 83, 69, 0.2), transparent 22%),
-        linear-gradient(135deg, #252520, #0f0f0e);
+    background: linear-gradient(135deg, #252520, #0f0f0e);
 }
 
 .product-visual::before {
@@ -657,10 +707,12 @@ h3 {
 }
 
 .product-image.rendered-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: none;
+    object-fit: contain;
+    filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.4));
 }
 
 .generated-can {
@@ -1298,10 +1350,15 @@ select:focus {
 
     .section-heading,
     .compact-heading,
+    .shop-controls,
     .custom-section,
     .order-layout,
     .checkout-layout {
         grid-template-columns: 1fr;
+    }
+
+    .shop-heading-copy {
+        justify-self: start;
     }
 
     .ig-feature-grid {
@@ -1368,6 +1425,27 @@ select:focus {
 
     h1 {
         font-size: clamp(2.45rem, 11vw, 3.15rem);
+    }
+
+    .shop-home {
+        min-height: auto;
+        padding-top: 92px;
+    }
+
+    .shop-heading h1 {
+        font-size: clamp(2.55rem, 12vw, 3.55rem);
+        line-height: 0.92;
+    }
+
+    .shop-heading-copy {
+        padding-top: 0;
+    }
+
+    .shop-controls {
+        gap: 14px;
+        margin-right: -2px;
+        margin-left: -2px;
+        padding: 12px;
     }
 
     .hero-copy {
@@ -1438,40 +1516,49 @@ select:focus {
         margin-bottom: 22px;
     }
 
-    .category-tabs,
+    .category-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+    }
+
     .filters {
         flex-wrap: nowrap;
         gap: 8px;
-        width: calc(100% + 32px);
-        margin-left: -16px;
-        padding: 0 16px 8px;
+        width: calc(100% + 24px);
+        margin-left: -12px;
+        padding: 0 12px 2px;
         overflow-x: auto;
         scrollbar-width: none;
         scroll-snap-type: x proximity;
     }
 
-    .category-tabs::-webkit-scrollbar,
     .filters::-webkit-scrollbar {
         display: none;
     }
 
     .filters {
-        margin-bottom: 18px;
+        margin-bottom: 0;
     }
 
     .filter-button,
     .category-button {
-        flex: 0 0 auto;
         min-height: 38px;
         padding: 9px 12px;
         font-size: 0.78rem;
         letter-spacing: 0.06em;
+    }
+
+    .filter-button {
+        flex: 0 0 auto;
         scroll-snap-align: start;
     }
 
     .category-button {
-        min-height: 40px;
-        padding-inline: 14px;
+        width: 100%;
+        min-height: 42px;
+        padding-inline: 10px;
     }
 
     .detail-band {

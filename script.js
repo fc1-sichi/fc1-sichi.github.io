@@ -397,6 +397,7 @@ const productGrid = document.querySelector("[data-products]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const categoryButtons = document.querySelectorAll("[data-category]");
 const brandFilters = document.querySelector(".filters");
+const flavorControls = document.querySelector(".flavor-controls");
 const header = document.querySelector("[data-header]");
 const orderList = document.querySelector("[data-order-list]");
 const emptyState = document.querySelector("[data-empty-state]");
@@ -571,6 +572,7 @@ categoryButtons.forEach((button) => {
         button.classList.add("active");
         activeCategory = button.dataset.category;
         brandFilters.hidden = activeCategory !== "energy";
+        flavorControls.hidden = activeCategory !== "energy";
         renderProducts(activeFilter);
     });
 });
