@@ -1,21 +1,21 @@
 const savedImages = {
-    "Red Bull Original Can Knob": "/images/products/renders/classic-blue-silver.jpg",
-    "Red Bull Sugarfree Can Knob": "/images/products/renders/classic-blue-silver.jpg",
-    "Red Bull Zero Can Knob": "/images/products/renders/classic-black-graphite.jpg",
-    "Red Bull Summer Edition Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Red Bull Summer Edition Sugarfree Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Red Bull Iced Edition Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Red Bull Iced Edition Sugarfree Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Red Bull Peach Edition Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Red Bull Peach Edition Sugarfree Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Red Bull Pink Edition Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Red Bull Pink Edition Sugarfree Can Knob": "/images/products/renders/classic-white-peach.jpg",
-    "Red Bull Amber Edition Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Red Bull Sea Blue Edition Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Red Bull Sea Blue Edition Sugarfree Can Knob": "/images/products/renders/classic-iced-berry.jpg",
-    "Red Bull Coconut Edition Can Knob": "/images/products/renders/classic-blue-silver.jpg",
-    "Red Bull Yellow Edition Can Knob": "/images/products/renders/classic-lime-silver.jpg",
-    "Red Bull Red Edition Can Knob": "/images/products/renders/classic-watermelon-red.jpg",
+    "Red Bull Original Can Knob": "/images/products/renders/redbull-original-can-knob.png",
+    "Red Bull Sugarfree Can Knob": "/images/products/renders/redbull-sugarfree-can-knob.png",
+    "Red Bull Zero Can Knob": "/images/products/renders/redbull-zero-can-knob.png",
+    "Red Bull Summer Edition Can Knob": "/images/products/renders/redbull-summer-can-knob.png",
+    "Red Bull Summer Edition Sugarfree Can Knob": "/images/products/renders/redbull-summer-can-knob.png",
+    "Red Bull Iced Edition Can Knob": "/images/products/renders/redbull-iced-can-knob.png",
+    "Red Bull Iced Edition Sugarfree Can Knob": "/images/products/renders/redbull-iced-can-knob.png",
+    "Red Bull Peach Edition Can Knob": "/images/products/renders/redbull-peach-can-knob.png",
+    "Red Bull Peach Edition Sugarfree Can Knob": "/images/products/renders/redbull-peach-can-knob.png",
+    "Red Bull Pink Edition Can Knob": "/images/products/renders/redbull-pink-can-knob.png",
+    "Red Bull Pink Edition Sugarfree Can Knob": "/images/products/renders/redbull-pink-can-knob.png",
+    "Red Bull Amber Edition Can Knob": "/images/products/renders/redbull-amber-can-knob.png",
+    "Red Bull Sea Blue Edition Can Knob": "/images/products/renders/redbull-seablue-can-knob.png",
+    "Red Bull Sea Blue Edition Sugarfree Can Knob": "/images/products/renders/redbull-seablue-can-knob.png",
+    "Red Bull Coconut Edition Can Knob": "/images/products/renders/redbull-coconut-can-knob.png",
+    "Red Bull Yellow Edition Can Knob": "/images/products/renders/redbull-yellow-can-knob.png",
+    "Red Bull Red Edition Can Knob": "/images/products/renders/redbull-red-can-knob.png",
     "Monster Ultra Zero Ultra": "/images/products/drink-02.png",
     "Monster Energy Original": "/images/products/drink-03.png",
     "Monster Ultra Blue Hawaiian": "/images/products/drink-08.png",
@@ -135,19 +135,20 @@ const brandAccents = {
 };
 
 function product({ name, category, label, flavor, accent, collection }) {
-    const image = savedImages[name] || `/images/products/generated/${slugify(name)}.svg`;
+    const displayName = /Can Knob$/i.test(name) ? name : `${name} Can Knob`;
+    const image = savedImages[name] || savedImages[displayName] || `/images/products/generated/${slugify(name)}.svg`;
 
     return {
-        name,
+        name: displayName,
         category,
         label,
         flavor,
         collection,
         price: "$40",
-        description: `${flavor}${collection ? ` ${collection}.` : "."}`,
+        description: flavor,
         accent: accent || brandAccents[category],
         image,
-        imageAlt: `${name} can-inspired shift knob`
+        imageAlt: `${displayName} can-inspired shift knob`
     };
 }
 
@@ -197,7 +198,7 @@ const classicProducts = [
     label: "Red Bull",
     flavor,
     accent,
-    collection: "Made using the selected can when available"
+    collection: "Can knob"
 }));
 
 const monsterProducts = [
@@ -284,7 +285,7 @@ const alaniProducts = [
     label: "Alani",
     flavor,
     accent,
-    collection: "Bright can colorway variants"
+    collection: "Can knob"
 }));
 
 const ghostProducts = [
@@ -318,7 +319,7 @@ const ghostProducts = [
     label: "GHOST",
     flavor,
     accent,
-    collection: "GHOST can shift knob style"
+    collection: "Can knob"
 }));
 
 const products = [
@@ -424,12 +425,7 @@ function renderProducts(filter = "all") {
         ? (filter === "all" ? products : products.filter((product) => product.category === filter))
         : merchProducts.filter((product) => product.category === activeCategory);
 
-    productGrid.innerHTML = visibleProducts.map((product) => {
-        const canFinePrint = activeCategory === "energy"
-            ? `<p class="product-fine-print">Fine print: I use the selected flavor can when available; final can availability is confirmed before payment.</p>`
-            : "";
-
-        return `
+    productGrid.innerHTML = visibleProducts.map((product) => `
         <article class="product-card">
             <div class="product-visual" style="--accent: ${product.accent};">
                 ${renderVisual(product)}
@@ -442,7 +438,6 @@ function renderProducts(filter = "all") {
                 <div>
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
-                    ${canFinePrint}
                 </div>
                 <button class="button secondary add-button" type="button" data-product-name="${product.name}">
                     <i class="fa-solid fa-plus"></i>
@@ -450,8 +445,7 @@ function renderProducts(filter = "all") {
                 </button>
             </div>
         </article>
-    `;
-    }).join("");
+    `).join("");
 }
 
 function getCart() {
