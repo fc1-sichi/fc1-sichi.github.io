@@ -18,8 +18,33 @@ const grandTotal = document.querySelector("[data-grand-total]");
 const summaryBox = document.querySelector("[data-summary-box]");
 const copySummary = document.querySelector("[data-copy-summary]");
 const copyStatus = document.querySelector("[data-copy-status]");
+const checkoutSteps = Array.from(document.querySelectorAll("[data-checkout-step]"));
+const stepButtons = Array.from(document.querySelectorAll("[data-step-button]"));
+const nextStepButtons = Array.from(document.querySelectorAll("[data-next-step]"));
+const prevStepButtons = Array.from(document.querySelectorAll("[data-prev-step]"));
+const finalActions = document.querySelector("[data-final-actions]");
 
 let lastLiveSignature = "";
+let activeStep = 0;
+
+function showCheckoutStep(step) {
+    activeStep = Math.min(Math.max(step, 0), checkoutSteps.length - 1);
+
+    checkoutSteps.forEach((panel, index) => {
+        panel.hidden = index !== activeStep;
+    });
+
+    stepButtons.forEach((button, index) => {
+        button.classList.toggle("active", index === activeStep);
+        button.setAttribute("aria-current", index === activeStep ? "step" : "false");
+    });
+
+    if (finalActions) {
+        finalActions.hidden = activeStep !== checkoutSteps.length - 1;
+    }
+
+    updateRequestLink();
+}
 
 function getCart() {
     try {
@@ -355,6 +380,24 @@ checkoutForm.addEventListener("focusout", updateRequestLink);
 
 copySummary.addEventListener("click", copyOrderSummary);
 
+stepButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        showCheckoutStep(Number(button.dataset.stepButton));
+    });
+});
+
+nextStepButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        showCheckoutStep(activeStep + 1);
+    });
+});
+
+prevStepButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        showCheckoutStep(activeStep - 1);
+    });
+});
+
 submitRequest.addEventListener("click", async (event) => {
     event.preventDefault();
     await copyOrderSummary();
@@ -370,6 +413,7 @@ threadToggle.addEventListener("change", () => {
 });
 
 threadSize.disabled = !threadToggle.checked;
+showCheckoutStep(0);
 renderCart();
 refreshEstimateIfNeeded();
 window.setTimeout(updateRequestLink, 150);

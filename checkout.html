@@ -6,7 +6,7 @@
     <meta name="description" content="Sichi Shop request checkout for drink orders and car fitment details.">
     <title>Sichi Shop | Request Checkout</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=13">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
@@ -33,13 +33,21 @@
     <main class="checkout-page">
         <section class="checkout-hero">
             <p class="eyebrow">Request checkout</p>
-            <h1>Confirm your order details.</h1>
-            <p>Add your contact, car fitment, and shipping info. The summary below is copied for PayPal so the request stays clear.</p>
+            <h1>One step at a time.</h1>
+            <p>Fill the basics, copy the note, then open PayPal.</p>
         </section>
 
         <section class="checkout-layout" aria-labelledby="checkout-title">
             <form class="checkout-form" data-checkout-form>
-                <div class="checkout-panel">
+                <div class="checkout-steps" aria-label="Checkout steps">
+                    <button class="step-button active" type="button" data-step-button="0">Contact</button>
+                    <button class="step-button" type="button" data-step-button="1">Car</button>
+                    <button class="step-button" type="button" data-step-button="2">Adapter</button>
+                    <button class="step-button" type="button" data-step-button="3">Shipping</button>
+                    <button class="step-button" type="button" data-step-button="4">Review</button>
+                </div>
+
+                <div class="checkout-panel" data-checkout-step="0">
                     <p class="eyebrow">Contact</p>
                     <h2 id="checkout-title">Your info</h2>
                     <div class="field-grid">
@@ -52,9 +60,12 @@
                             <input type="text" name="contact" placeholder="@username or email" required>
                         </label>
                     </div>
+                    <div class="checkout-step-actions">
+                        <button class="button primary" type="button" data-next-step>Next</button>
+                    </div>
                 </div>
 
-                <div class="checkout-panel">
+                <div class="checkout-panel" data-checkout-step="1" hidden>
                     <p class="eyebrow">Car details</p>
                     <h2>Fitment info</h2>
                     <div class="field-grid four">
@@ -91,9 +102,13 @@
                             <input type="text" name="shifter" placeholder="OEM shifter, short shifter, swap, etc.">
                         </label>
                     </div>
+                    <div class="checkout-step-actions">
+                        <button class="button secondary" type="button" data-prev-step>Back</button>
+                        <button class="button primary" type="button" data-next-step>Next</button>
+                    </div>
                 </div>
 
-                <div class="checkout-panel">
+                <div class="checkout-panel" data-checkout-step="2" hidden>
                     <p class="eyebrow">Thread sizing</p>
                     <h2>Adapter notes</h2>
                     <div class="thread-choice">
@@ -121,9 +136,13 @@
                         Extra notes
                         <textarea name="notes" rows="5" placeholder="Flavor substitutions, quantity notes, pickup/shipping, car mods, photos you can send, deadline, etc."></textarea>
                     </label>
+                    <div class="checkout-step-actions">
+                        <button class="button secondary" type="button" data-prev-step>Back</button>
+                        <button class="button primary" type="button" data-next-step>Next</button>
+                    </div>
                 </div>
 
-                <div class="checkout-panel">
+                <div class="checkout-panel" data-checkout-step="3" hidden>
                     <p class="eyebrow">Shipping estimate</p>
                     <h2>Shipping address</h2>
                     <div class="field-grid">
@@ -176,13 +195,21 @@
                         <p data-shipping-label>Choose a shipping option for an estimate.</p>
                         <small data-address-preview>Full address will appear in the copyable checkout note.</small>
                     </div>
+                    <div class="checkout-step-actions">
+                        <button class="button secondary" type="button" data-prev-step>Back</button>
+                        <button class="button primary" type="button" data-next-step>Review order</button>
+                    </div>
                 </div>
 
-                <div class="checkout-panel">
+                <div class="checkout-panel" data-checkout-step="4" hidden>
                     <p class="eyebrow">Copy this</p>
                     <h2>Order summary</h2>
                     <textarea class="summary-box" data-summary-box rows="14" readonly></textarea>
                     <div class="checkout-actions">
+                        <button class="button secondary" type="button" data-prev-step>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back
+                        </button>
                         <button class="button secondary" type="button" data-copy-summary>
                             <i class="fa-solid fa-copy"></i>
                         Copy order note
@@ -191,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="checkout-actions">
+                <div class="checkout-actions final-checkout-actions" data-final-actions hidden>
                     <a class="button secondary" href="/shop.html">
                         <i class="fa-solid fa-arrow-left"></i>
                         Keep shopping
@@ -242,6 +269,6 @@
         </div>
     </footer>
 
-    <script src="checkout.js?v=8"></script>
+    <script src="checkout.js?v=9"></script>
 </body>
 </html>
