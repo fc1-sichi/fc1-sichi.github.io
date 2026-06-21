@@ -1,6 +1,9 @@
 const CART_KEY = "sichiCart";
 const ITEM_PRICE = 40;
-const PAYPAL_URL = "https://paypal.me/moonlightnetworkUS?country.x=US&locale.x=en_US";
+const PAYMENT_CONFIG = window.SICHI_PAYMENT_CONFIG || {};
+const STRIPE_CHECKOUT_ENDPOINT = PAYMENT_CONFIG.stripeCheckoutEndpoint || "";
+const STRIPE_PAYMENT_LINK = PAYMENT_CONFIG.stripePaymentLink || "";
+const PAYMENT_CURRENCY = PAYMENT_CONFIG.currency || "usd";
 
 const cartItems = document.querySelector("[data-checkout-items]");
 const cartEmpty = document.querySelector("[data-cart-empty]");
@@ -302,6 +305,71 @@ function buildOrderSummary() {
     ].join("\n");
 }
 
+function buildCheckoutPayload() {
+    const cart = getCart();
+    const shipping = getShippingEstimate(cart);
+    const subtotal = cartSubtotal(cart);
+
+    return {
+        provider: "stripe",
+        currency: PAYMENT_CURRENCY,
+        customer: {
+            name: formValue("name"),
+            contact: formValue("contact")
+        },
+        items: cart.map((item) => ({
+            name: item.name,
+            label: item.label,
+            quantity: item.quantity,
+            unitAmount: Math.round(itemPriceValue(item) * 100),
+            unitPrice: itemPriceValue(item),
+            image: item.image
+        })),
+        totals: {
+            subtotal,
+            shipping: shipping.amount,
+            estimatedTotal: subtotal + shipping.amount
+        },
+        shipping: {
+            address: getShippingAddress(),
+            address1: formValue("address1"),
+            address2: formValue("address2"),
+            city: formValue("city"),
+            state: formValue("state"),
+            zip: formValue("zip"),
+            speed: formValue("shippingSpeed") || "cheapest",
+            method: shipping.method,
+            amount: shipping.amount,
+            packaging: formValue("packageType") || "small"
+        },
+        vehicle: {
+            year: formValue("year"),
+            make: formValue("make"),
+            model: formValue("model"),
+            trim: formValue("trim"),
+            transmission: formValue("transmission"),
+            shifter: formValue("shifter")
+        },
+        adapter: {
+            knowsThread: Boolean(formValue("knowsThread")),
+            threadSize: formValue("threadSize"),
+            adapterNeeded: formValue("adapter")
+        },
+        notes: formValue("notes"),
+        orderSummary: buildOrderSummary(),
+        successUrl: `${window.location.origin}/checkout.html?stripe=success`,
+        cancelUrl: window.location.href
+    };
+}
+
+function getStripeFallbackUrl() {
+    if (!STRIPE_PAYMENT_LINK) return "";
+    const separator = STRIPE_PAYMENT_LINK.includes("?") ? "&" : "?";
+    const reference = encodeURIComponent(`sichi-${Date.now()}`);
+
+    return `${STRIPE_PAYMENT_LINK}${separator}client_reference_id=${reference}`;
+}
+
 function updateRequestLink() {
     const cart = getCart();
     const shipping = getShippingEstimate(cart);
@@ -312,7 +380,7 @@ function updateRequestLink() {
     if (addressPreview) addressPreview.textContent = `Copyable address: ${getShippingAddress().replace(/\n/g, ", ")}`;
     if (grandTotal) grandTotal.textContent = formatMoney(subtotal + shipping.amount);
     if (summaryBox) summaryBox.value = buildOrderSummary();
-    if (submitRequest) submitRequest.href = PAYPAL_URL;
+    if (submitRequest) submitRequest.href = STRIPE_PAYMENT_LINK || "#stripe-checkout";
 }
 
 function liveSignature() {
@@ -354,6 +422,49 @@ async function copyOrderSummary() {
     window.setTimeout(() => {
         copyStatus.textContent = "";
     }, 2200);
+}
+
+async function openStripeCheckout() {
+    await copyOrderSummary();
+
+    if (copyStatus) {
+        copyStatus.textContent = "Opening Stripe...";
+    }
+
+    if (STRIPE_CHECKOUT_ENDPOINT) {
+        const response = await fetch(STRIPE_CHECKOUT_ENDPOINT, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(buildCheckoutPayload())
+        });
+
+        if (!response.ok) {
+            throw new Error("Stripe checkout endpoint failed.");
+        }
+
+        const data = await response.json();
+        const checkoutUrl = data.url || data.checkoutUrl || data.sessionUrl;
+
+        if (!checkoutUrl) {
+            throw new Error("Stripe checkout endpoint did not return a URL.");
+        }
+
+        window.location.href = checkoutUrl;
+        return;
+    }
+
+    const fallbackUrl = getStripeFallbackUrl();
+    if (fallbackUrl) {
+        window.location.href = fallbackUrl;
+        return;
+    }
+
+    if (copyStatus) {
+        copyStatus.textContent = "Stripe link needed.";
+    }
+    window.alert("Stripe is ready in the code, but this site still needs your Stripe Payment Link or checkout endpoint in payment-config.js.");
 }
 
 cartItems.addEventListener("click", (event) => {
@@ -400,8 +511,15 @@ prevStepButtons.forEach((button) => {
 
 submitRequest.addEventListener("click", async (event) => {
     event.preventDefault();
-    await copyOrderSummary();
-    window.location.href = PAYPAL_URL;
+    try {
+        await openStripeCheckout();
+    } catch (error) {
+        console.error(error);
+        if (copyStatus) {
+            copyStatus.textContent = "Stripe checkout could not open.";
+        }
+        window.alert("Stripe checkout could not open. Your order note was copied, so you can still send it by DM.");
+    }
 });
 
 threadToggle.addEventListener("change", () => {
